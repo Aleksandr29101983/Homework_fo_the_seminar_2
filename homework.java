@@ -29,8 +29,14 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class homework {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException { 
+        int a = readFile()[0];
+        int b = readFile()[1];
+        if(a == 0 && b == 0) writeFile("Не определено"); // записать в файл "Не определено"
+        else if(b < 0) writeFile(negativPow(a, b)); // Вычисляем и записываем в случае отрицательной степени
+        else writeFile(positivPow(a, b)); // Вычисляем и записываем в случае положительной степени
     }
+
     // Метод считывания файла:
     public static int[] readFile() throws FileNotFoundException {// FileNotFoundException Выдаст ошибку при отсутствии файла
         File file = new File("input.txt"); // создаем класс файл - присвоим файл некой сущности)

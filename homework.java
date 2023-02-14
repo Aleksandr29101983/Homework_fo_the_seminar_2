@@ -25,6 +25,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class homework {
@@ -68,5 +69,13 @@ public class homework {
         }
         result = String.valueOf(1/temp);
         return result;
+    }
+
+    // Метод записи в файл:
+    public static void writeFile(String string) throws FileNotFoundException {
+        File file = new File("output.txt"); // Создаем объект класса "файл"
+        PrintWriter pw = new PrintWriter(file); // Создаем объект класса записи в файл "PrintWriter"
+        pw.println(string); // Метод (команда) записи в файл
+        pw.close(); // закрываем объект класса "PrintWriter" (файл) 
     }
 }

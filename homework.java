@@ -47,4 +47,15 @@ public class homework {
         scanner.close(); // Закрыли сканер
         return intArray;
     }
+    
+    // ВЫчисление положительной степени
+    public static String positivPow(int a, int b) {
+        int temp = 1;
+        String result = "";
+        for(int i = 0; i < b; i++){
+            temp *= a;
+        }
+        result = String.valueOf(temp);
+        return result;
+    }
 }
